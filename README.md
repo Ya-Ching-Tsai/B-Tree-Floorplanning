@@ -49,7 +49,25 @@ Contains:
 - Module name  
 - Width & height  
 - Parent, left child, right child  
-- `X` means NULL  
-
+- `X` means NULL
+  
+File structure:
+> NumNode:< number >
+> 
+> name : <module_name>
+> 
+> dimension : <width> <height>
+> 
+> relation : <parent> <left_child> <right_child>
 ### 2. **perturbation file (`*.perturbation`)** (Part 2 only)
-Examples:
+Supports the following operations:
+> rotate < module >
+>
+> swap < moduleA > < moduleB >
+## Compile & Run
+### Compile
+> g++ -std=c++11 -O2 -o tree_floorplan tree_floorplan.cpp
+### Run
+> ./tree_floorplan <input.nodes>
+
+Place the input .nodes (and .perturbation, if required) in the same directory before running.
